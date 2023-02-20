@@ -1,4 +1,3 @@
-# Bre's Portfolio
 Coding Proejcts in SAS, Python, and SQL
 
 # [SAS PROJECT 1: Creating HTML and Listing Reports with Raw Data](https://github.com/breanusiem/SAS-Project-1)
