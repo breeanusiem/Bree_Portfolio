@@ -11,6 +11,6 @@ Coding Proejcts in SAS, Python, and SQL
 # [SAS PROJECT 2: Creating HTML and Listing Reports with Excel files](https://github.com/breanusiem/SAS-Project-2)
  - Imports data from an Excel file named ufo with a workseet named Sightings to create a listing report displaying the descriptor portion of the Excel sheet and an HTML report displaying the data portion of the Excel sheet
  - Creates a variable named region that is assigned a value based on each observation's state, a variable named Week that categorizes the date of the sighting into one of six weeks, and a variable named Duration that is assigned a value based on the value of the duration being less than a minute, 1 to 5 minutes, or more than 5 minutes
- - Creates an HTML report grouped on separate pages by the variable Week, displaying modified column headers, titles, variable formatting, and the number of observations at the bottom of each group. Within each Week, the values of Region are sorted alphabetically. Within each Region, the values of State are sorted alphabetically. Within each State, the values of duration are sorted from largest to smallest
+ - Creates an HTML report grouped on separate pages by the variable Week, displaying modified column headers, titles, variable formatting, and the number of observations at the bottom of each group. Within each Week, the values of Region are sorted alphabetically
 
 <img width="409" alt="Screenshot 2023-02-20 at 10 45 08 AM" src="https://user-images.githubusercontent.com/125768647/220180820-840fe099-46d7-4d4b-842d-8bdb041ab347.png">
