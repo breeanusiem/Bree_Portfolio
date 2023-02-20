@@ -1,0 +1,87 @@
+*1;
+proc import datafile='/home/u63114820/ufo.xlsx' out=work.ufo dbms=xlsx;
+	sheet='Sightings';
+run;
+
+ods html file='/home/u63114820/Ufo.html';
+title1 justify=left color=green height=5 'Ufo';
+proc print data=work.ufo;
+run;
+ods html close;
+
+ods listing file='/home/u63114820/Ufo.lst';
+options nodate linesize=90;
+proc contents data=work.ufo;
+run;
+ods listing close;
+
+*2;
+data work.ufo_sightings;
+	length region $10;
+	set work.ufo (keep=date time c city state shape duration_s posted);
+	duration_m=duration_s/60;
+	if state in ('ak', 'ca', 'co', 'hi', 'id', 'mt', 'nv', 'or', 
+	'ut', 'wa', 'wy') then region='West';
+	if state in ('ia', 'il', 'in', 'ks', 'mi', 'mn', 'mo', 'nd', 
+	'ne', 'oh', 'sd', 'wi') then region='Midwest';
+	if state in ('az', 'nm', 'ok', 'tx') then region='Southwest';
+	if state in ('ct', 'de', 'ma', 'md', 'me', 'nh', 'nj', 'ny', 
+	'pa', 'ri', 'vt') then region='Northeast';
+	if state in ('al', 'ar', 'fl', 'ga', 'ky', 'la', 'ms', 'nc', 
+	'sc', 'tn', 'va', 'wv') then region='Southeast';
+run;
+
+ods listing file='/home/u63114820/Ufo_Sightings.lst';
+title1 'Ufo Sightings';
+proc print data=work.ufo_sightings;
+	var date posted region duration_m;
+	label date='Date of Sighting'
+	posted='Date of Posting'
+	region='Sighting Region'
+	duration_m='Sighting Duration (min)'; 
+	format duration_m 8.1;
+	format date mmddyy10.;
+	format posted mmddyy10.;
+run;
+ods listing close;
+
+data work.ufo_sightings2;
+	set work.ufo_sightings (keep= date state region duration_m);
+	if date in ('01apr14'd,'02apr14'd,'03apr14'd,'04apr14'd,
+	'05apr14'd,'06apr14'd,'07apr14'd ) then Week=1;
+	if date in ('08apr14'd,'09apr14'd,'10apr14'd,'11apr14'd,
+	'12apr14'd,'13apr14'd,'14apr14'd ) then Week=2;
+	if date in ('15apr14'd,'16apr14'd,'17apr14'd,'18apr14'd,
+	'19apr14'd,'20apr14'd,'21apr14'd ) then Week=3;
+	if date in ('22apr14'd,'23apr14'd,'24apr14'd,'25apr14'd,
+	'26apr14'd,'27apr14'd,'28apr14'd ) then Week=4;
+	if date in ('29apr14'd,'30apr14'd,'01may14'd,'02may14'd,
+	'03may14'd,'04may14'd,'05may14'd ) then Week=5;
+	if date in ('06may14'd,'07may14'd,'08may14'd,'09may14'd,
+	'10may14'd,'11may14'd,'12may14'd ) then Week=6;
+	if Duration_m < 1 then duration='Less than a minute';
+	if 1 <= Duration_m <= 5 then duration='1 to 5 minutes';
+	if Duration_m > 5 then duration='More than 5 minutes';
+	format duration_m 8.1
+run;
+proc print data=work.ufo_sightings2;
+run;
+
+proc sort data=work.ufo_sightings2 out=work.ufo_sightings2_s;
+	by Week region state descending duration_m;
+run;	
+ods listing file='/home/u63114820/Ufo_Sightings2.lst';
+title1 'Ufo Sightings 2';
+proc print data=work.ufo_sightings2_s label N;
+	by Week;
+	pageby Week;
+	id Week;
+	var region state duration;
+	label region='Sighting Region'
+	state='State'
+	duration='Duration Length';
+run;
+ods listing close;
+
+
+

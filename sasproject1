@@ -1,0 +1,72 @@
+*1;
+libname h '/home/u63114820';
+proc sort data=h.baseball out=work.baseball_sorted;
+	by Division Team Name;
+run;
+
+ods listing file='/home/u63114820/Baseball.lst';
+options date timezone=PST number pageno=5;
+title1 'Baseball Players';
+title2 '- American League -';
+footnote 'Sorted by Division, Team, and Name';
+proc print data=work.baseball_sorted noobs label N;
+	by Division;
+	pageby Division;
+	var Team Name Position;
+	label Name='Player Name' Position='Player Position' Team='Team' Division='Division';
+	where League='American';
+run;
+ods listing close;	
+
+*2;
+data work.CarAccidents1;
+	infile '/home/u63114820/CarAccidents.dat';
+	input Reference $ 
+	@29 Day mmddyy10.
+	@40 Time
+	@51 Weather
+	@55 Severity
+	@62 VehicleType;
+	format Day mmddyy8.;
+	label Reference='Reference Number' 
+	Time='Approximate Time of Accident' 
+	Weather='Weather Conditions' 
+	VehicleType='Vehicle Type';
+run;
+
+ods listing file='/home/u63114820/CarAccidents.lst';
+options date timezone=PST number pageno=2 linesize=80;
+title1 'Car Accidents';
+proc print data=work.CarAccidents1;
+run;
+ods listing close;
+
+*3;
+data work.CarAccidents2;
+	infile '/home/u63114820/CarAccidents.dat';
+	input Reference $ 1-7 
+	Day $ 29-38 
+	Time $ 40-43 
+	Severity $ 55 
+	VehicleType $ 62-63;
+run;
+
+proc contents data=work.CarAccidents2;
+run;
+
+ods listing file='/home/u63114820/CarAccidents2.lst';
+options nonumber nodate linesize=95 pagesize=105;
+title1 'Car Accidents 2';
+proc print data=work.CarAccidents2 noobs;
+run;
+ods listing close;
+
+*4;
+proc datasets library=work;
+	modify CarAccidents1;
+	label VehicleType='Type of Vehicle';
+	format Day date9.;
+run;
+
+proc contents data=work.CarAccidents1;
+run;
