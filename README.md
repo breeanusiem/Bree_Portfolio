@@ -9,4 +9,4 @@ Coding Proejcts in SAS, Python, and SQL
  - Creates a variable named region that is assigned a value based on each observation's state, a variable named Week that categorizes the date of the sighting into one of six weeks, and a variable named Duration that is assigned a value based on the value of the duration being less than a minute, 1 to 5 minutes, or more than 5 minutes
  - Creates an HTML report grouped on separate pages by the variable Week, displaying modified column headers, titles, variable formatting, and the number of observations at the bottom of each group. Within each Week, the values of Region are sorted alphabetically. Within each Region, the values of State are sorted alphabetically. Within each State, the values of duration are sorted from largest to smallest
 
-![](https://github.com/breanusiem/Bre_Portfolio/blob/main/images/Ufo.png)
+<img width="849" alt="Screenshot 2023-02-20 at 10 32 32 AM" src="https://user-images.githubusercontent.com/125768647/220178736-b4cba631-7a18-40e0-a471-9c5fb27407cf.png">
