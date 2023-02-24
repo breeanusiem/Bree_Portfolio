@@ -16,6 +16,9 @@ Coding Proejcts in SAS, Python, and SQL
 <img width="409" alt="Screenshot 2023-02-20 at 10 45 08 AM" src="https://user-images.githubusercontent.com/125768647/220180820-840fe099-46d7-4d4b-842d-8bdb041ab347.png">
 
 # [Python Project: Applying Newton's Method and Interpolating Polynomials](https://github.com/breanusiem/Python-Project)
- - Uses Newton's method to find solutions accurate to within 10^-4 for x^3-2x^2-5=0 [1,4], x^3+3x^2-1=0, [-3,-2], 
+ - Uses Newton's method to find solutions accurate to within 10^-4 for the following equations:
+ <img width="263" alt="Screenshot 2023-02-24 at 10 32 02 AM" src="https://user-images.githubusercontent.com/125768647/221263468-8fef6549-2501-4b6b-85a6-5bd5da7eb4bf.png">
+<img width="378" alt="Screenshot 2023-02-24 at 10 33 05 AM" src="https://user-images.githubusercontent.com/125768647/221263482-bd771420-6a2c-4dc2-9367-5b3edf359c08.png">
+- Returns interpolation value at a user-defined point using user-defined x and y values
 
 # [SQL Project: ](https://github.com/breanusiem/)
