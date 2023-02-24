@@ -26,3 +26,4 @@ Coding Proejcts in SAS, Python, and R
 
 # [R Project: Determining Variation in Temparture by Season](https://github.com/breanusiem/R-Project)
 
+<img width="875" alt="Screenshot 2023-02-24 at 11 33 27 AM" src="https://user-images.githubusercontent.com/125768647/221275202-6efbae93-a969-47cf-90ea-bbfcc5d2ba3f.png">
