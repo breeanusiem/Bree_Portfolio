@@ -15,7 +15,7 @@ Coding Proejcts in SAS, Python, and SQL
 
 <img width="409" alt="Screenshot 2023-02-20 at 10 45 08 AM" src="https://user-images.githubusercontent.com/125768647/220180820-840fe099-46d7-4d4b-842d-8bdb041ab347.png">
 
-# [Python Project: ](https://github.com/breanusiem/)
-
+# [Python Project: Applying Newton's Method and Interpolating Polynomials](https://github.com/breanusiem/Python-Project)
+ - 
 
 # [SQL Project: ](https://github.com/breanusiem/)
