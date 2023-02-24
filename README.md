@@ -1,4 +1,4 @@
-Coding Proejcts in SAS, Python, and SQL
+Coding Proejcts in SAS, Python, and R
 
 # [SAS Project 1: Creating HTML and Listing Reports with Raw Data](https://github.com/breanusiem/SAS-Project-1)
  - Reads in a data set named BASEBALL to create a listing report displaying specific variables and total number of observations in each group with different Divisions on separate pages, sorted by Team and Name
@@ -24,4 +24,5 @@ Coding Proejcts in SAS, Python, and SQL
 
 - Returns interpolation value at a user-defined point using user-defined x and y values
 
-# [SQL Project: ](https://github.com/breanusiem/)
+# [R Project: Determining Variation in Temparture by Season](https://github.com/breanusiem/R-Project)
+
